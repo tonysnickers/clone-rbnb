@@ -1,0 +1,22 @@
+
+<div class="container">
+  <div class="form-flat ">
+    <%# <h2 class="d-flex  justify-content-center">ADD YOUR</h2> %>
+    <div class="mb-3 mt-5 mb-5">
+      <%= simple_form_for(@flat) do |f| %>
+        <%= f.label :name, class:"form-label" %>
+        <%= f.text_field :name, class:"form-control", id:"formGroupExampleInput" %>
+        <%= f.label :address, class:"form-label" %>
+        <%= f.text_field :address, class:"form-control", id:"formGroupExampleInput" %>
+        <%= f.label :description, class:"form-label" %>
+        <%= f.text_area :description, class:"form-control", id:"formGroupExampleInput" %>
+        <%= f.label :price_per_night, class:"form-label" %>
+        <%= f.number_field :price_per_night, class:"form-control", id:"formGroupExampleInput" %>
+        <%= f.label :number_of_guests, class:"form-label" %>
+        <%= f.number_field :number_of_guests, class:"form-control", id:"formGroupExampleInput" %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-4 mb-5" >
+    <% @flats.each do |flat| %>
+      <div class="col">
+        <div class="card h-100">
+            <%#= cl_image_tag flat.photos.first.key, width: 400, height: 200, crop: :fill %>
+          <div class="card-body">
+            <h1 class="card-title"><%= flat.name %></h1>
+            <h4 class="card-text"><%= flat.address %></h4>
+            <p class="card-text"><%= flat.description %></p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted d-flex justify-content-around">
+              <%= link_to "See more", flat_path(flat), class: "text-decoration-none text-success" %>
+              <%= link_to "Edit", edit_flat_path(flat), class: "text-decoration-none text-warning" %>
+              <%= link_to "Delete", flat_path(flat), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-danger" %>
+            </small>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
